@@ -3,20 +3,120 @@ html {
     @include box-sizing(border-box);
     height: 100%;
 }
+
 *,
 *:after,
 *:before {
   @include box-sizing(inherit);
 }
+
 body {
     font-family: $fuente_principal;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    #root {
+        display: flex;
+        flex: 1;
+    }
+    
 }
+
 img {
     max-width: 100%;
 }
+
+img.App-logo {
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    margin: 0;
+}
+
 .centrado {
     text-align:center;
 }
+
 .oculto {
     display: none;
+}
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    .header {
+        display: flex;
+        .nombre-sitio {
+            background-color: $secundario;
+            flex: 0 0 5rem;
+            padding: 1rem;
+            @include desktop {
+                flex: 0 0 20rem;
+            }
+            h1 {
+                text-align: center;
+                color: $blanco;
+            }
+            .escritorio-logo {
+                display: flex;
+                justify-content: center;
+                img {
+                    display: none;
+                    @include desktop {
+                        display: block;
+                    }
+                }
+            }
+            .escritorio {
+                display: none;
+                @include desktop {
+                    display: block;
+                }
+            }
+            .movil {
+                @include desktop {
+                    display: none;
+                }
+            }
+        }
+    }
+    .contenedor-principal {
+        flex: 1;
+    }
+}
+
+.barra {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background-color: $primario;
+
+    .menu-izquierdo {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .menu-derecho {
+        display: flex;
+        .caja {
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            &:hover {
+                background-color: darken($primario, 5);
+            }
+            a {
+                color: $blanco;
+                text-decoration: none;
+                span {
+                    background-color: $terciario;
+                    border-radius: 50%;
+                    padding: 0.5rem;
+                    margin-left: .5rem;
+                }
+            }
+        }   
+    }
 }

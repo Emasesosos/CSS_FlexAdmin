@@ -1,0 +1,143 @@
+/** Media Queries **/
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body #root {
+  display: flex;
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+img.App-logo {
+  width: 75px;
+  height: 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.centrado {
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.pagina {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pagina .header {
+  display: flex;
+}
+
+.pagina .header .nombre-sitio {
+  background-color: #003f8c;
+  flex: 0 0 5rem;
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .pagina .header .nombre-sitio {
+    flex: 0 0 20rem;
+  }
+}
+
+.pagina .header .nombre-sitio h1 {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.pagina .header .nombre-sitio .escritorio-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.pagina .header .nombre-sitio .escritorio-logo img {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .pagina .header .nombre-sitio .escritorio-logo img {
+    display: block;
+  }
+}
+
+.pagina .header .nombre-sitio .escritorio {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .pagina .header .nombre-sitio .escritorio {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .pagina .header .nombre-sitio .movil {
+    display: none;
+  }
+}
+
+.pagina .contenedor-principal {
+  flex: 1;
+}
+
+.barra {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  background-color: #005b9f;
+}
+
+.barra .menu-izquierdo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.barra .menu-derecho {
+  display: flex;
+}
+
+.barra .menu-derecho .caja {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.barra .menu-derecho .caja:hover {
+  background-color: #004c86;
+}
+
+.barra .menu-derecho .caja a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.barra .menu-derecho .caja a span {
+  background-color: #009045;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin-left: .5rem;
+}
