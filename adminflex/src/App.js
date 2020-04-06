@@ -12,7 +12,6 @@ function App() {
             <Header/>
             <Main/>
         </div>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </Fragment>
         
   );

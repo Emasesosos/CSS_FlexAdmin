@@ -8,26 +8,26 @@ const Header = () => {
     });
 
     const onClick = (e) => {
-        console.log('Click en las Flechas');
+        // console.log('Click en las Flechas');
         const claseMenu = e.target.classList;
-        console.log('claseMenu: ', claseMenu);
-
+        // console.log('claseMenu: ', claseMenu);
+        
         // Crear variables que seleccionen las flechas y la página
         const contenedor = document.querySelector('.pagina');
-        console.log(contenedor);
-        const flechaIzq = document.querySelector('.fa-arrow-left');
-        const flechaDer = document.querySelector('.fa-arrow-right');
+        // console.log(contenedor);
 
         if(claseMenu.contains('fa-arrow-left')) {
-            console.log('Cierra el Menú');
+            // console.log('Cierra el Menú');
             guardarFlecha({
                 currentArrow: 'fa-arrow-right'
-            })
+            });
+            contenedor.classList.add('no-menu');
         } else {
-            console.log('Abre el Menú');
+            // console.log('Abre el Menú');
             guardarFlecha({
                 currentArrow: 'fa-arrow-left'
-            })
+            });
+            contenedor.classList.remove('no-menu');
         }
     }
 
