@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './../../logo.svg';
 
 const Header = () => {
+
+    const [flecha, guardarFlecha] = useState({
+        currentArrow: 'fa-arrow-left'
+    });
+
+    const onClick = (e) => {
+        console.log('Click en las Flechas');
+        const claseMenu = e.target.classList;
+        console.log('claseMenu: ', claseMenu);
+
+        // Crear variables que seleccionen las flechas y la página
+        const contenedor = document.querySelector('.pagina');
+        console.log(contenedor);
+        const flechaIzq = document.querySelector('.fa-arrow-left');
+        const flechaDer = document.querySelector('.fa-arrow-right');
+
+        if(claseMenu.contains('fa-arrow-left')) {
+            console.log('Cierra el Menú');
+            guardarFlecha({
+                currentArrow: 'fa-arrow-right'
+            })
+        } else {
+            console.log('Abre el Menú');
+            guardarFlecha({
+                currentArrow: 'fa-arrow-left'
+            })
+        }
+    }
+
     return (
         <header className="header">
             <div className="nombre-sitio">
@@ -15,8 +44,10 @@ const Header = () => {
             </div>
             <div className="barra">
                 <div className="menu-izquierdo">
-                    <i className="fas fa-arrow-left"></i>
-                    <i className="fas fa-arrow-right"></i>
+                    <i 
+                        className={`fas ${flecha.currentArrow}`} 
+                        onClick={onClick} 
+                    ></i>
                 </div>
                 <div className="menu-derecho">
                     <div className="mensaje caja">
